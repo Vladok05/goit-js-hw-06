@@ -11,8 +11,9 @@ class Storage {
     this.#items.push(newItem);
   }
   removeItem(itemToRemov) {
-    for (const item in this.#items) {
-      if (this.#items[item] === itemToRemov) this.#items.splice(item, 1);
+    for (const item of this.#items) {
+      if (item === itemToRemov)
+        this.#items.splice(this.#items.indexOf(itemToRemov), 1);
     }
   }
 }
